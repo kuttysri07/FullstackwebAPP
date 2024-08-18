@@ -38,17 +38,12 @@ const App = () => {
         formData.append("category", createproduct.category);
         formData.append("file", file);
 
-    try {
+    
         const response = await axios.post(`${API_URL}/upload`, formData)
         console.log(response.data);
         fetchImages();  // Fetch the updated list of images after a new upload
         window.location("/admin");
 
-      
-    }
-    catch(err){
-       console.log({message:err.message});
-    }
 
     }
 
